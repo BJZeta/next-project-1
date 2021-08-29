@@ -29,14 +29,16 @@ export default function EventPage({ evt }) {
         </span>
         <h1>{evt.name}</h1>
 
-        <div className={styles.image}>
-          <Image
-            src={evt.image.formats.large.url}
-            width={960}
-            height={600}
-            alt={evt.name}
-          />
-        </div>
+        {evt.image && (
+          <div className={styles.image}>
+            <Image
+              src={evt.image.formats.large.url}
+              width={960}
+              height={600}
+              alt={evt.name}
+            />
+          </div>
+        )}
 
         <h3>Performers:</h3>
         <p>{evt.performers}</p>
